@@ -1,0 +1,47 @@
+{
+  "name": "@fanfic/tag-tools",
+  "version": "1.0.0",
+  "author": {
+    "name": "Rebecca Turner",
+    "email": "me@re-becca.org",
+    "twitter": "ReBeccaOrg"
+  },
+  "license": "ISC",
+  "scripts": {
+    "prerelease": "npm t",
+    "release": "standard-version -s",
+    "postrelease": "npm publish && git push --follow-tags",
+    "pretest": "iarna-standard",
+    "test": "tap -J -100 test/*.js",
+    "update-coc": "weallbehave -o . && git add CODE_OF_CONDUCT.md && git commit -m 'docs(coc): updated CODE_OF_CONDUCT.md'",
+    "update-contrib": "weallcontribute -o . && git add CONTRIBUTING.md && git commit -m 'docs(contributing): updated CONTRIBUTING.md'"
+  },
+  "devDependencies": {
+    "@iarna/standard": "*",
+    "@iarna/toml": "^2.2.1",
+    "benchmark": "^2.1.4",
+    "cursor": "^0.1.5",
+    "qtoml": "^2.0.0",
+    "standard-version": "*",
+    "tap": "*",
+    "weallbehave": "*",
+    "weallcontribute": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iarna/fanfic-tag-tools.git"
+  },
+  "bugs": "https://github.com/iarna/fanfic-tag-tools/issues",
+  "homepage": "https://npmjs.com/package/@fanfic/tag-tools",
+  "description": "Tag management functions for fanfic",
+  "dependencies": {
+    "@perl/qr": "^1.2.0",
+    "qw": "^1.0.1"
+  },
+  "engines": {
+    "node": "^7.6.0"
+  },
+  "files": [
+    "index.js"
+  ]
+}
