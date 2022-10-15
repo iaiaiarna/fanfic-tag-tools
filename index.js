@@ -522,6 +522,9 @@ class TagList extends Array {
     }
     return this
   }
+  toJSON () {
+    return this.values()
+  }
 }
 
 // ---
@@ -570,6 +573,9 @@ const $inspect = Symbol.for('nodejs.util.inspect.custom')
 class ChangedTag extends String {
   [$inspect] () {
     return '[ChangedTag: ' + util.inspect(String(this)) + ']'
+  }
+  toJSON () {
+    return String(this)
   }
 }
 
