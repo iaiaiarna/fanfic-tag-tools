@@ -193,7 +193,7 @@ class TagMapping {
     if (!match) return
     for (let mm of match) {
       if (!mm.has) return mm.replace
-      if (tags && mm.has.every(_ => tags.includes(_))) {
+      if (tags && mm.has.every(_ => tags.some(t => t.toLowerCase() === _))) {
         mm.has.forEach(_ => tags.splice(tags.indexOf(_), 1))
         return mm.replace
       }
